@@ -1,0 +1,19 @@
+.card1{
+	width : 500px;
+	height : 250px;
+	margin-top: 100px;
+	margin-left : 450px;
+	align-items: center;
+	text-align: center;
+}
+md-input-container
+{
+
+	color: green;
+	font-size: 15px;
+	font-family:Times New Roman;
+	font-weight: bold;
+   box-shadow: 0px 1px black !important ;
+}
+
+

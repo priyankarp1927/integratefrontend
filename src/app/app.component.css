@@ -1,0 +1,17 @@
+/*@import '~@angular/material/prebuilt-themes/purple-green.css';*/
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
+md-toolbar
+{
+	height: 100px;
+	background: orange;
+	color: white;
+}
+
+label
+{
+	font-size: 80px;
+    padding-top: 40px;
+	padding-left: 410px;
+	font-style: italic;
+	font-family: Times New Roman;
+}

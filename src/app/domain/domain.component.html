@@ -1,0 +1,77 @@
+<div *ngIf="b">
+<md-grid-list cols="6" rowHeight="1:0.8">
+
+  <md-grid-tile>
+    	<md-card>
+ 	      <button   md-button class="butjava" (click) = "clickondomain('JAVA')">
+  	   <md-card-header>
+           <span class="java" >JAVA</span>
+        </md-card-header>
+          <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpj99nvGzTcw1UpkTxnkzwizhzJ22vbrms1Svx1dlaxIBF1xY0">
+      </button>
+    <!--  <button md-button class="butjava">java</button> -->
+     </md-card>
+   </md-grid-tile>
+
+ 
+  <md-grid-tile>
+  	<md-card>
+     <button  md-button  class="butpython"  (click) = "clickondomain('PYTHON')">
+ 		<md-card-header>
+   		 <span class="python">PYTHON</span>
+       	</md-card-header>
+    	<img  class="img" src="http://www.ynotinfo.info/blog/wp-content/uploads/2016/12/unnamed.png">
+      </button>
+   </md-card>
+  </md-grid-tile>
+  
+
+  <md-grid-tile>
+    		<md-card>
+       <button  md-button  class="butruby" (click) = "clickondomain('RUBY')">
+ 		<md-card-header>
+   			 <span class="ruby">RUBY</span>
+       	</md-card-header>
+    	<img class="img" src="https://tpucdn.com/reviews/Asustor/AS-204TE/images/app_Ruby512.png">
+      </button>
+   </md-card>
+  </md-grid-tile>
+
+  <md-grid-tile>
+        <md-card>
+       <button   md-button  class="butperl"  (click) = "clickondomain('PERL')">
+    <md-card-header>
+         <span class="perl">PERL</span>
+        </md-card-header>
+      <img class="img" src="http://www.i-programmer.info/images/stories/News/2015/Dec/A/cropped-camelia-small-santa1.png">
+      </button>
+   </md-card>
+  </md-grid-tile>
+
+  <md-grid-tile>
+        <md-card>
+       <button   md-button  class="butangular"  (click) = "clickondomain('ANGULAR')">
+    <md-card-header>
+         <span class="angular"> ANGULAR</span>
+        </md-card-header>
+      <img class="img" src="http://orbit-dev.com/sites/default/files/2017-02/angularjs_1.png">
+      </button>
+   </md-card>
+  </md-grid-tile>
+
+  <md-grid-tile>
+        <md-card>
+       <button   md-button  class="butreact"  (click) = "clickondomain('REACT')">
+    <md-card-header>
+         <span class="react">REACT</span>
+        </md-card-header>
+      <img class="img" src="http://www.uipep.com/assets/images/developers/reactjs/reactjs.png">
+      </button>
+   </md-card>
+  </md-grid-tile> 
+ 
+</md-grid-list>
+ </div>
+ <div *ngIf="a">
+ <router-outlet></router-outlet> 
+  </div>
