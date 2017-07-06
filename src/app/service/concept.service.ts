@@ -4,9 +4,19 @@ import { Headers, Http, RequestOptions } from '@angular/http';
 export class ConceptService{
 
   constructor(private http : Http) { }
+
+ tofetch(domain : string)
+ { 
+   console.log("domainToFetch");
+     return this.http.get('http://localhost:8080/v1/api/movie')
+   .map((response) => response.json() || []);
+   //console.log("aaaaaaaa"+domain);
+   //return Observable.of(domain);
+ }  
+
+
   search(value:String){
-  	
-  	console.log("inside service " +value);
+  		console.log("inside service " +value);
   	 let url = 'http://localhost:8080/word';
   	 let encoded_data=value;
           let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -23,13 +33,5 @@ return this.http.post(url, encoded_data , options).map((res)=> res.json() || [])
 return this.http.post(url,encoded_data, options).map((res)=> res.json() || []);	
 	}
 
-  /*getConcept(domain : string)
- { 
-   console.log("service");
-     return this.http.get('http://localhost:8080/v1/api/movie')
-   .map((response) => response.json() || []);
-   //console.log("aaaaaaaa"+domain);
-   //return Observable.of(domain);
-     
- }*/
+ 
 }

@@ -3,10 +3,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { ConceptService} from '../app/service/concept.service';
 import { DomainComponent} from '../app/domain/domain.component';
 import {FormControl} from '@angular/forms';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/operator/map';
-import {MdAutocompleteModule} from '@angular/material';
 
 
 @Component({
@@ -15,96 +11,36 @@ import {MdAutocompleteModule} from '@angular/material';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent implements OnInit {
-	
-  conceptCtrl : FormControl;
-  termCtrl : FormControl;
-  
-  filteredConcepts : any;
-  filteredDomain: any;
-  filteredTerm : any;
-  concept: String[];
-  term: String[];
-  conceptDomain  : string;
 
-// domain = [
-//     'Java',
-//     'Python',
-//     'Perl',
-//     'Angular',
-//     'C',
-//     'C++'
-//     ];
-    concepts= [
-    'Java',
-    'Python',
-    'Perl',
-    'Angular',
-    'C',
-    'C++'
-    ];
-
-// terms = [
-//     'Java',
-//     'Python',
-//     'Perl',
-//     'Angular',
-//     'C',
-//     'C++'
-//     ];
-
+model1: any;
+model2: any;
+conceptDomain : string;
 
 constructor(private route: ActivatedRoute, private conceptService : ConceptService,
-       private domainComponent : DomainComponent) {
-/*
-        this.domainCtrl = new FormControl();
-    this.filteredDomain = this.domainCtrl.valueChanges
-        .startWith(null)
-        .map(name => this.filterDomain(name));
-*/
-    this.conceptCtrl = new FormControl();
-    this.filteredConcepts = this.conceptCtrl.valueChanges
-        .startWith(null)
-        .map(name => this.filterConcepts(name));
-      
-
-    //  this.termCtrl = new FormControl();
-    // this.filteredTerm = this.termCtrl.valueChanges
-    //     .startWith(null)
-    //     .map(name => this.filterTerm(name));
-     
-
-        
-      }
-   
+       private domainComponent : DomainComponent) {}
 
   ngOnInit() {
      this.route.params.subscribe(params =>{this.conceptDomain = params['domain']});
-     // this.route.params
-     //    .switchMap((params: Params) =>
-     //     this.conceptService.getConcept(params['domain']))
-     //    .subscribe((concept ) => { this.conceptDomain = concept;
-     //     //console.log("concept"+concept);
-     //    });
- }
+       
+       this.route.params
+        .switchMap((params: Params) =>
+         this.conceptService.tofetch(params['domain']))
+        .subscribe((concept ) => { this.conceptDomain = concept;
+         //console.log("concept"+concept);
+        });
+      }
+
+    concepts: string[] =
+      ["this", "is", "array", "of", "text"];
+
+        terms: string[] =
+      ["this", "is", "array", "of", "text"];  
+ 
+}
+
+ 
 
 
-/*
-   filterDomain(val: string) {
-    return val ? this.domain.filter(s => s.toLowerCase().indexOf(val.toLowerCase()) === 0)
-               : this.domain;
-  }
-*/
-  filterConcepts(val: string) {
-    //return val;
-     return val ? this.concepts.filter(s => s.toLowerCase().indexOf(val.toUpperCase()) === 0)
-                : this.concepts;
-  }
-
-  // filterTerm(val: string) {
-  //   //return val;
-  //    return val ? this.terms.filter(s => s.toLowerCase().indexOf(val.toUpperCase()) === 0)
-  //               : this.terms;
-  // }
 
 
  //  Submit(value){
@@ -120,4 +56,4 @@ constructor(private route: ActivatedRoute, private conceptService : ConceptServi
  //   this.conceptService.searchTerm(value).subscribe( a => this.term = a);
  // }
 
-}
+

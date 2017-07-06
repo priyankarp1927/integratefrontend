@@ -7,6 +7,8 @@ import { MdGridListModule , MdButtonModule, MdCheckboxModule,
          MdAutocompleteModule, MdOptionModule,
         MdCardModule, MdProgressSpinnerModule,MdChipsModule} from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';        
+import {MdSelectModule} from '@angular/material';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 @NgModule({
   imports: [
@@ -24,7 +26,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdOptionModule,
     MdProgressSpinnerModule,
     MdChipsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MdSelectModule,
+    NguiAutoCompleteModule
   ],
   exports: [
     MdAutocompleteModule,
@@ -40,7 +44,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdOptionModule,
     MdProgressSpinnerModule,
     MdChipsModule,
-    NoopAnimationsModule     
+    NoopAnimationsModule,
+    MdSelectModule,
+    NguiAutoCompleteModule  
     ],
   declarations: []
 })

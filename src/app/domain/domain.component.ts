@@ -7,15 +7,14 @@ import { Router , Params } from '@angular/router';
   templateUrl: './domain.component.html',
   styleUrls: ['./domain.component.css']
 })
-export class DomainComponent {
+export class DomainComponent   {
 a:number;
 b:number;
 
- constructor( private router: Router) {
+ constructor(private router: Router) {
  	 this.b=1;
  	 }
-
-   clickondomain(domain : string)
+  clickondomain(domain : string)
 {
 	
 	 console.log(domain);

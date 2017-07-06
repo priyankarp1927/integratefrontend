@@ -1,55 +1,33 @@
- 
- <!-- <md-card class="card1"> --> 
+ <button class="frontback"  md-raised-button>BACK</button>
+
+ <md-card class="card">
 
 <div>
  <label>DOMAIN : {{conceptDomain}}</label>
 </div>
 
-<md-input-container> 
- <input type="text" mdInput placeholder="Concept"  [formControl]=" conceptCtrl " [mdAutocomplete]="auto"> 
-  </md-input-container> 
-       <md-autocomplete #auto="mdAutocomplete" >
-            <md-option *ngFor=" let concept of filteredConcepts | async" [value]="concept">
-                  {{ concept }}
-            </md-option>
-        </md-autocomplete>
- 
-
-
-<!-- <md-input-container >
-   <input mdInput placeholder="CONCEPT" #domain [mdAutocomplete]="auto">                
-     <md-autocomplete #auto = "mdAutocomplete" >
-        <md-option *ngFor="let concept of filteredConcept | async" [value]='concept'>
-            {{ concept }}
-        </md-option>
-     </md-autocomplete>
-</md-input-container> 
- -->
 
 <!-- <div *ngIf="concept" >  -->
-<!-- <md-input-container>
-  <input mdInput  placeholder="Concept" [mdAutocomplete]="auto" [mdAutocomplete]="conceptAuto" [formControl]="conceptCtrl" >
-</md-input-container>
+<label> CONCEPTS  : 
+  <input ngui-auto-complete
+    [(ngModel)]="model1"
+    [source]="concepts"
+    placeholder="List of concepts"/></label>
+
+ <!--  </div> -->
+ <label> TERMS  : 
+ <input ngui-auto-complete
+    [(ngModel)]="model2"
+    [source]="terms"
+    placeholder="List of Terms"/></label>
+
+<br> <button  md-raised-button>SWIS-it</button>
 </md-card>
 
-<md-autocomplete #auto = "mdAutocomplete">
-  <md-option *ngFor="let concept of filteredConcept | async" [value]="concept">
-   <span>{{ concept }}</span>
-  </md-option>
-</md-autocomplete><br><br> -->
-<!-- </div> -->
 
 
-<!-- 	 -->
-<!-- <md-input-container>    
-  <input mdInput placeholder="TERMS"  [mdAutocomplete]="term" [formControl]="termCtrl" >
-</md-input-container>
 
-<md-autocomplete #term = "mdAutocomplete">
-  <md-option *ngFor="let term of filteredTerm | async" [value]="term">
-    {{ term }}
-  </md-option>
-</md-autocomplete>
-<br/><br><br><br>
-<button md-raised-button>SWIS-it</button> -->
-<!-- </div> -->
+
+
+ 
+

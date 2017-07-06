@@ -10,11 +10,13 @@ import { SearchbarComponent } from '../searchbar/searchbar.component';
 import { ConceptService} from './service/concept.service';
 import { SwisitMaterialModule } from './swisit-material.module';
 import { AppRouterModule } from './approuter.module';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
      DomainComponent , 
-    SearchbarComponent
+    SearchbarComponent,
+
        ],
   imports: [MdAutocompleteModule,
    BrowserModule,
@@ -22,7 +24,8 @@ import { AppRouterModule } from './approuter.module';
    ReactiveFormsModule,
    SwisitMaterialModule,
    AppRouterModule,
-   FlexLayoutModule 
+   FlexLayoutModule,
+   FormsModule
  
       ],  
     providers: [ ConceptService],
